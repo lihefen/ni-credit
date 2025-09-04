@@ -1,0 +1,103 @@
+.main {
+    padding-bottom: 400px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px #ebedf0;
+    margin: 30px auto 0;
+    padding: 30px 20px;
+    border: 1px solid #E8F3FF;
+    box-sizing: border-box;
+}
+
+.applicantItem {
+    display: flex;
+    align-items: center;
+}
+
+
+.nameItem {
+    display: flex;
+    align-items: center;
+}
+
+.phoneItem {
+    display: flex;
+    align-items: center;
+}
+.idItem {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    div:nth-child(1) {
+        color: #6a7282;
+        font-size: 28px;
+    }
+    div:nth-child(2) {
+        flex: 1;
+        text-align: right;
+        color: #000;
+        font-size: 28px;
+    }
+}
+.requestedItem {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    div:nth-child(1) {
+        color: #6a7282;
+        font-size: 28px;
+    }
+    div:nth-child(2) {
+        flex: 1;
+        text-align: right;
+        color: #000;
+        font-size: 28px;
+    }
+}
+.suggestedItem {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    div:nth-child(1) {
+        color: #6a7282;
+        font-size: 28px;
+    }
+    div:nth-child(2) {
+        flex: 1;
+        text-align: right;
+        color: #000;
+        font-size: 28px;
+    }
+}
+
+.btnGroup {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        text-align: center;
+        height: 64px;
+        border-radius: 16px;
+        font-size: 30px;
+    }
+    .btn1 {
+        background: #000;
+        color: #fff;
+        border: 1px solid #000;
+        margin-right: 20px;
+    }
+    .btn2 {
+        background: #009966;
+        color: #fff;
+    }
+}
