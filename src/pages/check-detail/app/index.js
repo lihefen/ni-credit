@@ -1,12 +1,8 @@
 import { navigateTo } from '@/utils';
 import { Toast,CountDown } from 'vant';
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-import 'swiper/css/swiper.css';
 
 export default {
   components: {
-    Swiper,
-    SwiperSlide
   },
   name: 'HomeApp',
   data() {
