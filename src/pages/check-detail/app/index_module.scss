@@ -839,6 +839,9 @@
                 vertical-align: middle;
                 margin-right: 20px;
             }
+            div {
+                flex: 1;
+            }
         }
         .btn2 {
             display: flex;
@@ -854,6 +857,9 @@
                 vertical-align: middle;
                 margin-right: 20px;
             }
+            div {
+                flex: 1;
+            }
         }
         .btn3 {
             display: flex;
@@ -868,6 +874,9 @@
                 height: 40px;
                 vertical-align: middle;
                 margin-right: 20px;
+            }
+            div {
+                flex: 1;
             }
         }
     }
