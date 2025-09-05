@@ -37,17 +37,22 @@ export default {
     };
   },
   methods: {
-    /**
-     * 显示提示信息
-     * @returns {void}
-     */
-    showToast() {
-      Toast('页面应用示例');
-    },
-    hide() {
-      this.showReduceDialog = false;
-      this.showEscalateDialog = false;
-      this.showOverrideDialog = false;
+        hide() {
+        this.showReduceDialog = false;
+        this.showEscalateDialog = false;
+        this.showOverrideDialog = false;
+        },
+        reduceHandle() {
+            this.showReduceDialog = true;
+            this.showPop = false;
+        },
+        escalateHandle() {
+            this.showEscalateDialog = true;
+            this.showPop = false;
+        },
+        overrideHandle() {
+            this.showOverrideDialog = true;
+            this.showPop = false;
+        }
     }
-  }
-};
+}

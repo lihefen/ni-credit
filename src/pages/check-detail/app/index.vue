@@ -25,9 +25,9 @@
         <div class="pop" v-if="showPop">
             <div class="text">Supervisor / Advanced</div>
             <div class="item">
-                <a href="javascript:;" @click="showReduceDialog = true" class="btn1"><span></span><div>Reduce Limit</div></a>
-                <a href="javascript:;" @click="showEscalateDialog = true" class="btn2"><span></span><div>Escalate to Supervisor</div></a>
-                <a href="javascript:;" @click="showOverrideDialog = true" class="btn3"><span></span><div>Override Approve (Supervisor)</div></a>
+                <a href="javascript:;" @click="reduceHandle" class="btn1"><span></span><div>Reduce Limit</div></a>
+                <a href="javascript:;" @click="escalateHandle" class="btn2"><span></span><div>Escalate to Supervisor</div></a>
+                <a href="javascript:;" @click="overrideHandle" class="btn3"><span></span><div>Override Approve (Supervisor)</div></a>
             </div>
         </div>
 
