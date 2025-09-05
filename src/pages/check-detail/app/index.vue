@@ -172,10 +172,10 @@
                 <div class="year">14 months</div>
             </div>
             <div class="warningItem">
-                <div class="tag1">Same device used by 3 accounts in last 30 days</div>
+                <div class="tag1"><span></span>Same device used by 3 accounts in last 30 days</div>
                 <div class="tagGroup">
-                    <div class="tag2">Address ≠ LBS (Victoria Island vs. Lekki cluster)</div>
-                    <div class="tag3">BVN verified</div>
+                    <div class="tag2"><span></span>Address ≠ LBS (Victoria Island vs. Lekki cluster)</div>
+                    <div class="tag3"><span></span>BVN verified</div>
                 </div>
             </div>
         </div>
