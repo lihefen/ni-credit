@@ -8,6 +8,103 @@
 -->
 <template>
     <div class="main">
+        <div class="header">
+            <div class="left">
+                <a href="javascript:;" class="backIcon"></a>
+                <span>1/2</span>
+            </div>
+           
+            <div class="right">
+                <div class="status"></div>
+                <a href="javascript:;" class="editIcon" @click="showPop = !showPop">
+                    <span></span>
+                </a>
+            </div>
+
+        </div>
+        <div class="pop" v-if="showPop">
+            <div class="text">Supervisor / Advanced</div>
+            <div class="item">
+                <a href="javascript:;" class="btn1"><span></span>Reduce Limit</a>
+                <a href="javascript:;" class="btn2"><span></span>Escalate to Supervisor</a>
+                <a href="javascript:;" class="btn3"><span></span>Override Approve (Supervisor)</a>
+            </div>
+        </div>
+
+        <Popup v-model="showReduceDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="content">
+                <a href="javascript:;" class="closeIcon" @click="hide"></a>
+                <div class="title">Reduce Credit Limit</div>
+                <div class="item inputItem">
+                    <div class="text">New Limit (₦)</div>
+                    <van-field v-model="limitValue"  />
+                </div>
+
+                <div class="item areaItem">
+                    <div class="text">Reason</div>
+                    <van-field
+                        v-model="reasonArea"
+                        rows="1"
+                        autosize
+                        type="textarea"
+                        placeholder="Reviewer notes..."
+                    />
+                </div>
+                <div class="btnGroup">
+                    <a href="javascript:;"  @click="hide" class="cancelBtn">Cancel</a>
+                    <a href="javascript:;"  @click="hide" class="submitBtn">Submit</a>
+                </div>
+            </div>
+        </Popup>
+
+        <Popup v-model="showEscalateDialog" position="bottom" :close-on-click-overlay="false" class="escalateDialog" @click-overlay="hide">
+            <div class="content">
+                <a href="javascript:;" class="closeIcon" @click="hide"></a>
+                <div class="title">Escalate to Supervisor</div>
+                <div class="item areaItem">
+                    <div class="text">Reason / Context</div>
+                    <van-field
+                        v-model="reasonArea"
+                        rows="1"
+                        autosize
+                        type="textarea"
+                        placeholder="What needs supervisor review?"
+                    />
+                </div>
+                <div class="btnGroup">
+                    <a href="javascript:;"  @click="hide" class="cancelBtn">Cancel</a>
+                    <a href="javascript:;"  @click="hide" class="submitBtn">Submit</a>
+                </div>
+            </div>
+        </Popup>
+
+        <Popup v-model="showOverrideDialog" position="bottom" :close-on-click-overlay="false" class="overrideDialog" @click-overlay="hide">
+            <div class="content">
+                <a href="javascript:;" class="closeIcon" @click="hide"></a>
+               
+                <div class="title">Override Approve (Supervisor)</div>
+                <div class="tips">
+                    <div class="tipsIcon"></div>
+                    <div>Approving with missing checklist is logged and requires justification.</div>
+                </div>
+                <div class="item areaItem">
+                    <div class="text">Reason / Context</div>
+                    <van-field
+                        v-model="reasonArea"
+                        rows="1"
+                        autosize
+                        type="textarea"
+                        placeholder="Enter reason for override..."
+                    />
+                </div>
+                <div class="btnGroup">
+                    <a href="javascript:;"  @click="hide" class="cancelBtn">Cancel</a>
+                    <a href="javascript:;"  @click="hide" class="submitBtn">Submit</a>
+                </div>
+            </div>
+        </Popup>
+
+        
         <div class="card">
             <div class="applicantItem">
                 <div>Applicant</div>
@@ -129,6 +226,81 @@
                 </div>
             </div>
         </div>
+
+        <div class="card communicationCard">
+            <div class="communicationItem">
+                <div>Communication Log</div>
+                <div class="tag"><span class="chatIcon"></span>3</div>
+            </div>
+            <dl>
+                <dt class="phoneIcon"></dt>
+                <dd>
+                    <div>No answer</div>
+                    <div>2025/9/4 20:23:53</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt class="chatIcon"></dt>
+                <dd>
+                    <div>WA template sent — Docs request</div>
+                    <div>2025/9/4 20:23:53</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt class="phoneIcon"></dt>
+                <dd>
+                    <div>Connected; verified address verbally</div>
+                    <div>2025/9/4 21:38:53</div>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="card notesCard">
+            <div class="notesItem">
+                <div>Notes & Attachments</div>
+                <div class="tag"><span ></span>Must pass</div>
+            </div>
+            <div class="field noteTextArea">
+                <van-field
+                    v-model="noteTextArea"
+                    rows="1"
+                    autosize
+                    type="textarea"
+                    placeholder="Reviewer notes..."
+                />
+            </div>
+            <div class="fileGroup">
+                <div class="fileItem"><span></span>ID_Front.jpg</div>
+                <div class="fileItem">ID_Back.jpg</div>
+                <div class="fileItem">ID_Front.jpg</div>
+            </div>
+        </div>
+
+
+        <div class="card approvalCard"> 
+            <div class="approvalItem">
+                <div>Approval Checklist</div>
+                <div class="tag"><span ></span>Must pass</div>
+            </div>
+            <div class="checkboxGroup">
+                <van-checkbox-group v-model="checkSlect">
+                    <van-checkbox shape="square" name="a">Name on ID matches applicant & selfie</van-checkbox>
+                    <van-checkbox shape="square" name="b">Applicant OR contact reachable by call/WhatsApp</van-checkbox>
+                    <van-checkbox shape="square" name="b">Address verified (document or LBS)</van-checkbox>
+                    <van-checkbox shape="square" name="d">BVN & NIN verified / no mismatch</van-checkbox>
+                </van-checkbox-group>
+
+            </div>
+        </div>
+
+        <div class="card  logCard">
+            <div class="logItem">
+                <div>Audit Logt</div>
+                <div class="tag"><span ></span>0</div>
+            </div>
+            <div class="text">No actions yet.</div>
+        </div>
+
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Button, Cell, NavBar, CellGroup, Toast,CountDown } from 'vant';
+import { Button, Cell, NavBar, CellGroup, Toast,CountDown ,Field,Checkbox, CheckboxGroup,Popup} from 'vant';
 import 'vant/lib/index.css';
 import App from './app/index.vue';
 
@@ -10,6 +10,10 @@ Vue.use(NavBar);
 Vue.use(CellGroup);
 Vue.use(Toast);
 Vue.use(CountDown);
+Vue.use(Field);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(Popup);
 
 /**
  * 初始化Vue实例

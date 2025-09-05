@@ -3,6 +3,53 @@
     box-sizing: border-box;
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 120px;
+}
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: #fff;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border-bottom: 1px solid #ebe6e7;
+    .left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        font-size: 30px;
+        color: #000;
+        font-weight: bold;
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url(./images/zap_black.png) no-repeat center center;
+            background-size: 100% 100%;
+            margin-right: 20px;
+        }
+    }
+    .refreshBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        width: 70px;
+        height: 70px;
+        span {
+            display: inline-block;
+            background: url(./images/refresh_cw_black.png) no-repeat center center;
+            background-size: 100% 100%;
+            width: 40px;
+            height: 40px;
+        }
+    }
 }
 .card {
     width: 100%;
@@ -66,7 +113,7 @@
         }
         .phoneIcon {
             display: inline-block;
-            background: url(./images/phone_icon_1.png) no-repeat center center;
+            background: url(./images/phone_icon_black.png) no-repeat center center;
             background-size: 100% 100%;
             width: 40px;
             height: 40px;
@@ -74,7 +121,7 @@
         }
         .chatIcon {
             display: inline-block;
-            background: url(./images/chat_icon.png) no-repeat center center;
+            background: url(./images/message_circle_ffffff.png) no-repeat center center;
             background-size: 100% 100%;
             width: 30px;
             height: 30px;
@@ -90,30 +137,32 @@
 
 .tag1 {
     display: inline-block;
-    color: #165DFF;
-    background: #E8F3FF;
+    color: #000;
+    background: #fcf9fa;
     font-size: 26px;
-    border-radius: 40px;
+    border-radius: 12px;
     padding: 8px 20px;
     margin-right: 10px;
+    border: 1px solid #e2e8f0;
 }
 
 .tag2 {
     display: inline-block;
-    color: #F53F3F;
-    background: #FFECE8;
+    color: #a50036;
+    background: #ffe4e6;
     font-size: 26px;
     border-radius: 40px;
     padding: 8px 20px;
     margin-right: 10px;
+    border: 1px solid #ffa1ad;
 }
 
 .tag3 {
     display: inline-block;
-    color: #F53F3F;
-    background: #FFECE8;
+    color: #c70036;
+    background: #fff1f2;
     font-size: 26px;
-    border-radius: 40px;
+    border-radius: 12px;
     padding: 8px 20px;
 }
 .btn1 {
@@ -135,6 +184,9 @@
     border: 1px solid #000;
     color: #fff;
     background: #000;
+}
+::v-deep .van-count-down {
+    color: #c70036;
 }
 
 @media screen and (min-width: 750px) {
