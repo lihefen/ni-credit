@@ -1,9 +1,10 @@
 import { navigateTo } from '@/utils';
-import { Toast,CountDown,Field,Checkbox, CheckboxGroup,Popup} from 'vant';
+import { Toast,CountDown,Field,Checkbox, CheckboxGroup,Popup,DropdownMenu, DropdownItem } from 'vant';
 
 export default {
   components: {
-    Popup
+    Popup,
+    DropdownMenu, DropdownItem 
   },
   name: 'HomeApp',
   data() {
@@ -16,7 +17,23 @@ export default {
         limitValue:'40000',
         reasonArea:'',
         showEscalateDialog:false,
-        showOverrideDialog:false
+        showOverrideDialog:false,
+        options:[
+           {
+            text:'friendly',
+            value:0,
+           },
+           {
+            text:'docs',
+            value:1,
+           },
+           {
+            text:'ptpConfirm',
+            value:2,
+           }
+
+        ],
+        optionValue:0
     };
   },
   methods: {

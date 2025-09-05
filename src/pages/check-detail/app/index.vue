@@ -108,7 +108,7 @@
         <div class="card">
             <div class="applicantItem">
                 <div>Applicant</div>
-                <div class="tag">First loan</div>
+                <div class="tag"><span></span>First loan</div>
             </div>
             <div class="nameItem">
                 <div class="name">John Okoro</div>
@@ -116,10 +116,10 @@
             </div>
             <div class="phoneItem">
                 <div class="phoneGroup">
-                    <div class="phone">+2348031234567</div>
-                    <div class="sim">SIM 14 mo</div>
+                    <div class="phone"><span></span>+2348031234567</div>
+                    <div class="sim"><span></span>SIM 14 mo</div>
                 </div>
-                <div class="address">Lagos, Lagos</div>
+                <div class="address"><span></span>Lagos, Lagos</div>
             </div>
             <div class="idItem">
                 <div>Application ID</div>
@@ -135,9 +135,23 @@
                 <div>₦40,000</div>
             </div>
             <div class="btnGroup">
-               <a class="btn1 btn" href="javascript:;">Call Applicant</a>
-               <a class="btn2 btn" href="javascript:;">WhatsApp</a>
+               <a class="btn1 btn" href="javascript:;"><span></span>Call Applicant</a>
+               <a class="btn2 btn" href="javascript:;"><span></span>WhatsApp</a>
             </div>
+            <div class="operationList">
+                <div class="waTemplate">
+                    <div class="text">WA Template:
+                        
+                    </div>
+                    <van-dropdown-menu>
+                        <van-dropdown-item v-model="optionValue" :options="options" />
+                    </van-dropdown-menu>
+                </div>
+                <div class="copy">
+                    <a href="javascript:;" class="copyIcon"><span></span></a>Copy BVN
+                </div>
+            </div>
+         
         </div>
 
         <div class="card">
@@ -146,15 +160,15 @@
                 <div class="tag">Policy-required</div>
             </div>
             <div class="verifiedItem">
-                <div>BVN: 2234••••5678</div>
+                <div><span class="shieldCheckIcon"></span>BVN: 2234••••5678</div>
                 <div class="tag">verified</div>
             </div>
             <div class="verifiedItem">
-                <div>NIN: 4456••••8899</div>
+                <div><span class="shieldCheckIcon"></span>NIN: 4456••••8899</div>
                 <div class="tag">verified</div>
             </div>
             <div class="verifiedItem">
-                <div>SIM / Phone tenure</div>
+                <div><span class="networkIcon"></span>SIM / Phone tenure</div>
                 <div class="year">14 months</div>
             </div>
             <div class="warningItem">
