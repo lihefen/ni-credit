@@ -68,6 +68,7 @@ module.exports = {
         app: path.resolve(__dirname, '../src/app'),
         services: path.resolve(__dirname,  '../src/services'),
         utils: path.resolve(__dirname,  '../src/utils'),
+        'assets': path.resolve(__dirname,  '../src/assets'),
     }
   },
   module: {
@@ -91,36 +92,7 @@ module.exports = {
         use: [
           process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  'autoprefixer',
-                  [
-                    'postcss-px-to-viewport',
-                    {
-                        unitToConvert: 'px',
-                        viewportWidth: 750,
-                        exclude: [/node_modules\/vant/], // 这里排除对vant的转换
-                        unitPrecision: 5,
-                        propList: ['*'],
-                        viewportUnit: 'vw',
-                        fontViewportUnit: 'vw',
-                        selectorBlackList: [],
-                        minPixelValue: 1,
-                        mediaQuery: false,
-                        replace: true,
-                        include: /\/src\//,
-                        landscape: false,
-                        landscapeUnit: 'vw',
-                        landscapeWidth: 1125,
-                    }
-                  ]
-                ]
-              }
-            }
-          },
+          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {

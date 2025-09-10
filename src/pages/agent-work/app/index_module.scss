@@ -1,0 +1,20 @@
+.main {
+    padding-bottom: 400px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 120px;
+    background: #f6f3f4;
+}
+.kpiMod {
+    .box {
+        .wallet-icon {
+            width: 18px;
+            height: 18px;
+            color: #3b82f6; /* 蓝色 */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+}
