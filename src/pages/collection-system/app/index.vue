@@ -374,10 +374,10 @@
                                     Quick Actions
                                 </div>
                                 <div class="flex gap-2 flex-wrap">
-                                    <a href="javascript:;" class="px-3 py-2 rounded-xl bg-indigo-600 text-white text-xs">Set PTP</a>
+                                    <a @click="showQuickDialog = true" href="javascript:;" class="px-3 py-2 rounded-xl bg-indigo-600 text-white text-xs">Set PTP</a>
                                     <a href="javascript:;" class="px-3 py-2 rounded-xl bg-emerald-600 text-white text-xs">Send Pay Link</a>
-                                    <a href="javascript:;" class="px-3 py-2 rounded-xl bg-slate-100 text-xs">Upload Receipt</a>
-                                    <a href="javascript:;" class="px-3 py-2 rounded-xl text-xs bg-amber-600 text-white">Escalate</a>
+                                    <a @click="showUploadDialog = true" href="javascript:;" class="px-3 py-2 rounded-xl bg-slate-100 text-xs">Upload Receipt</a>
+                                    <a @click="showEscalateDialog = true" href="javascript:;" class="px-3 py-2 rounded-xl text-xs bg-amber-600 text-white">Escalate</a>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +453,7 @@
         <Popup v-model="showRequestDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
             <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
                 <div class="flex items-center justify-between">
-                    <div class="font-semibold"></div>
+                    <div class="font-semibold">Request · waiver</div>
                     <a href="javascript:;" class="p-2" @click="hide">
                         <X class="w-5 h-5"></X>
                     </a>
@@ -472,6 +472,118 @@
                 </a>
             </div>
         </Popup>
+
+        <Popup v-model="showQuickDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold" >Set PTP</div>
+                    <a href="javascript:;" class="p-2" @click="hideQuickDialog">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="javascript:;" class="py-2 rounded-xl text-sm bg-indigo-600 text-white flex items-center justify-center">
+                        Fixed
+                    </a>
+                    <a href="javascript:;" class="py-2 rounded-xl text-sm bg-slate-100 flex items-center justify-center">
+                        Percent
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-2 items-end stepperValue">
+                    <div>
+                        <div class="text-xs mb-1">Percent</div>
+                        <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                            <van-stepper v-model="stepperValue1" />
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <div class="text-xs mb-1">Parts (1–4)</div>
+                        <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                            <van-stepper v-model="stepperValue2" />
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 text-sm">
+                    <div>
+                        Total: ₦1,034,032,373 · Parts: 3
+                    </div>
+                    <div class="mt-2 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <div>#1 · 2025/9/12</div>
+                            <div>₦344,677,457</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>#2 · 2025/9/12</div>
+                            <div>₦344,677,457</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>#3 · 2025/9/12</div>
+                            <div>₦344,677,457</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="w-full py-2 rounded-xl bg-emerald-600 text-white text-sm flex items-center justify-center">
+                    Create & Send WA
+                </a>
+            </div>
+        </Popup>
+
+        <Popup v-model="showEscalateDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold" >Set PTP</div>
+                    <a href="javascript:;" class="p-2" @click="showEscalateDialog = false">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div>
+                    <div class="text-xs mb-1">Reason *</div>
+                    <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                        <van-field  v-model="escalateValue"  />
+                    </div>
+                </div>
+                <a href="javascript:;" class="w-full py-2 rounded-xl bg-indigo-600 text-white text-sm flex items-center justify-center">
+                    Submit
+                </a>
+            </div>
+        </Popup>
+
+
+        <Popup v-model="showUploadDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold" >Set PTP</div>
+                    <a href="javascript:;" class="p-2" @click="showUploadDialog = false">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <div class="text-xs mb-1">File name *</div>
+                        <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                            <van-field disabled v-model="fileNameValue"  />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-xs mb-1">Amount *</div>
+                        <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                            <van-field  v-model="amountValue"  />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-xs text-slate-500">
+                    * Demo does not upload actual files. We allocate amount across installments in order and mark fully covered ones as paid.
+                </div>
+                <a href="javascript:;" class="w-full py-2 rounded-xl text-white text-sm bg-slate-300 flex items-center justify-center">
+                    Save
+                </a>
+            </div>
+        </Popup>
+
+
 
     </div>
 </template>

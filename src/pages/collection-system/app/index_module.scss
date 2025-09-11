@@ -41,5 +41,11 @@
 ::v-deep.van-popup {
     background: transparent;
 }
+::v-deep  .stepperValue .van-stepper  {
+    display: flex;
+}
+::v-deep  .stepperValue .van-stepper__input {
+    flex: 1;
+}
 @media (max-width: 768px) {
 }

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Button, Cell, NavBar, CellGroup, Toast,CountDown,Checkbox,Field,Calendar,Popover,DropdownMenu, DropdownItem,Popup  } from 'vant';
+import { Button, Cell, NavBar, CellGroup, Toast,CountDown,Checkbox,Field,Calendar,Popover,DropdownMenu, DropdownItem,Popup ,Stepper } from 'vant';
 import 'vant/lib/index.css';
 import App from './app/index.vue';
 import 'assets/styles/tailwind.css'
@@ -17,6 +17,7 @@ Vue.use(Popover);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
 Vue.use(Popup);
+Vue.use(Stepper);
 /**
  * 初始化Vue实例
  * @description 挂载路由配置和根组件

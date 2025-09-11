@@ -1,5 +1,5 @@
 import { navigateTo } from '@/utils';
-import { Toast,CountDown,Checkbox ,Field,Calendar,DropdownMenu, DropdownItem,Popup} from 'vant';
+import { Toast,CountDown,Checkbox ,Field,Calendar,DropdownMenu, DropdownItem,Popup,Stepper} from 'vant';
 import { WalletCards,TriangleAlert,Clock,Info,Award,Phone,MessageCircle,ArrowRight,Settings2 ,ChevronLeft,ClipboardList,CalendarDays,X,Check,FileText,Languages,Bel,Wifi,History,Search,RefreshCw,Funnel,ChevronRight,Gavel ,Activity,Bell,Star,SquareCheckBig} from 'lucide-vue';
 
 export default {
@@ -34,7 +34,8 @@ export default {
     DropdownMenu,
     DropdownItem,
     Gavel,
-    Popup
+    Popup,
+    Stepper
   },
   name: 'HomeApp',
   data() {
@@ -73,7 +74,15 @@ export default {
         sideTabIndex:0,
         modTabIndex:0,
         showRequestDialog:false,
-        percentValue:10
+        percentValue:10,
+        showQuickDialog:false,
+        stepperValue1:249081,
+        stepperValue2:3,
+        showEscalateDialog:false,
+        escalateValue:"",
+        showUploadDialog:true,
+        fileNameValue:"IMG_20250908.jpg",
+        amountValue:"50000"
         
     };
   },
@@ -169,6 +178,9 @@ export default {
     },
     hide() {
         this.showRequestDialog = false;
+    },
+    hideQuickDialog() {
+        this.showQuickDialog = false;   
     }
   }
 };
