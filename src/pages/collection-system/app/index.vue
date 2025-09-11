@@ -128,7 +128,7 @@
                             <div class="flex items-center gap-2 mt-2">
                                 <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]"><Phone class="w-4 h-4"></Phone> </a>
                                 <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]"><MessageCircle class="w-4 h-4"></MessageCircle> </a>
-                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]"><FileText class="w-4 h-4"></FileText> </a>
+                                <a @click="showSide = true" href="javascript:;" class="flex-1 py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]"><FileText class="w-4 h-4"></FileText> </a>
                             </div>
                         </div>
                     </div>
@@ -436,7 +436,7 @@
                         <a href="javascript:;" class="py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]">
                             <Phone class="w-4 h-4"></Phone>
                         </a>
-                        <a href="javascript:;" class="py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]">
+                        <a  @click="showChooseDialog = true"  href="javascript:;" class="py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]">
                             <MessageCircle class="w-4 h-4"></MessageCircle>
                         </a>
                         <a @click="showActionRecordDialog = true"  href="javascript:;" class="py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]">
@@ -618,6 +618,63 @@
                 <a href="javascript:;" class="w-full py-2 rounded-xl text-white text-sm bg-slate-300 flex items-center justify-center">
                     Save
                 </a>
+            </div>
+        </Popup>
+
+        <Popup v-model="showChooseDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold">Choose WA template</div>
+                    <a href="javascript:;" class="p-2" @click="showChooseDialog = false">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <div class="text-xs mb-1 flex items-center gap-1"><PencilLine class="w-4 h-4"></PencilLine> Amount (₦)</div>
+                        <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="p-3 rounded-xl bg-slate-100">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-medium">
+                                Friendly reminder<span class="text-[11px] ml-1 px-2 py-0.5 rounded-full bg-slate-200">IGBO</span>
+                            </div>
+                            <a href="javascript:;" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs" @click="showActionRecordDialog = false">Send</a>
+                        </div>
+                        <div class="text-xs text-slate-600 mt-1 text-left">
+                            Ndewo, nke a bụ ncheta maka ịkwụ ụgwọ gị. Zaa ma ịchọrọ enyemaka.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="p-3 rounded-xl bg-slate-100">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-medium">
+                                Friendly reminder<span class="text-[11px] ml-1 px-2 py-0.5 rounded-full bg-slate-200">IGBO</span>
+                            </div>
+                            <a href="javascript:;" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs" @click="showActionRecordDialog = false">Send</a>
+                        </div>
+                        <div class="text-xs text-slate-600 mt-1 text-left">
+                            Ndewo, nke a bụ ncheta maka ịkwụ ụgwọ gị. Zaa ma ịchọrọ enyemaka.
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="p-3 rounded-xl bg-slate-100">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm font-medium">
+                                Friendly reminder<span class="text-[11px] ml-1 px-2 py-0.5 rounded-full bg-slate-200">IGBO</span>
+                            </div>
+                            <a href="javascript:;" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs" @click="showActionRecordDialog = false">Send</a>
+                        </div>
+                        <div class="text-xs text-slate-600 mt-1 text-left">
+                            Ndewo, nke a bụ ncheta maka ịkwụ ụgwọ gị. Zaa ma ịchọrọ enyemaka.
+                        </div>
+                    </div>
+                </div>
             </div>
         </Popup>
 

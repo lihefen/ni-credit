@@ -1,6 +1,6 @@
 import { navigateTo } from '@/utils';
 import { Toast,CountDown,Checkbox ,Field,Calendar,DropdownMenu, DropdownItem,Popup,Stepper} from 'vant';
-import { WalletCards,TriangleAlert,Clock,Info,Award,Phone,MessageCircle,ArrowRight,Settings2 ,ChevronLeft,ClipboardList,CalendarDays,X,Check,FileText,Languages,Bel,Wifi,History,Search,RefreshCw,Funnel,ChevronRight,Gavel ,Activity,Bell,Star,SquareCheckBig} from 'lucide-vue';
+import { WalletCards,TriangleAlert,Clock,Info,Award,Phone,MessageCircle,ArrowRight,Settings2 ,ChevronLeft,ClipboardList,CalendarDays,X,Check,FileText,Languages,Bel,Wifi,History,Search,RefreshCw,Funnel,ChevronRight,Gavel ,Activity,Bell,Star,SquareCheckBig,PencilLine} from 'lucide-vue';
 
 export default {
   components: {
@@ -35,7 +35,8 @@ export default {
     DropdownItem,
     Gavel,
     Popup,
-    Stepper
+    Stepper,
+    PencilLine
   },
   name: 'HomeApp',
   data() {
@@ -70,7 +71,7 @@ export default {
         showSideMod1:false,
         showSideMod2:false,
         showSideMod3:false,
-        showSideMod3:false,
+        showSideMod4:false,
         sideTabIndex:0,
         modTabIndex:0,
         showRequestDialog:false,
@@ -96,7 +97,8 @@ export default {
             { text: 'Dispute', value: 6 },
             { text: 'Complaint', value: 7 },
         ],
-        outcomeValue:0
+        outcomeValue:0,
+        showChooseDialog:false
         
     };
   },
