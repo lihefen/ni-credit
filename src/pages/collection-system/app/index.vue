@@ -61,7 +61,7 @@
                 <RefreshCw class="w-4 h-4"></RefreshCw>
             </a>
         </div>
-        <template v-if="showMod1">
+        <template v-if="showMod0">
             <div class="flex-1 overflow-y-auto">
                 <div class="p-3 space-y-3">
                     <div class="grid grid-cols-3 gap-3">
@@ -136,7 +136,7 @@
             </div>
         </template>
         
-        <template v-if="showMod2">
+        <template v-if="showMod1">
             <div class="flex-1 overflow-y-auto">
                 <div class="p-3 space-y-2">
                     <div class="flex items-center gap-2 mb-1">
@@ -186,7 +186,7 @@
             </div>
         </template>
 
-        <template v-if="showMod3">
+        <template v-if="showMod2">
             <div class="flex-1 overflow-y-auto">
                 <div class="p-3 space-y-2">
                     <div class="p-3 rounded-2xl bg-white border" v-for="(item,index) in userList" :key="index +8">
@@ -210,7 +210,7 @@
             </div>
         </template>
 
-        <template v-if="showMod4">
+        <template v-if="showMod3">
             <div class="flex-1 overflow-y-auto">
                 <div class="p-3 space-y-3">
                     <div class="grid grid-cols-2 gap-3">
@@ -288,39 +288,39 @@
             </div>
         </template>
 
-        <template v-if="showMod5">
+        <template v-if="showMod4">
             <div class="flex-1 overflow-y-auto">
                 <div class="p-6 text-slate-500 text-sm">
                     QA review page (placeholder) — future: call recording, transcription, scoring.
                 </div>
             </div>
         </template>
-        <div class="grid grid-cols-5 bg-white border-t border-slate-200">
-            <a @click="navHandle('1')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-indigo-600">
+        <div class="grid grid-cols-5 bg-white border-t border-slate-200" >
+            <a @click="navHandle('0')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-indigo-600" :class=" modTabIndex == 0 ? 'text-indigo-600' : 'text-slate-500'">
                 <Clock class="w-5 h-5"></Clock>
                 <div class="mt-0.5">
                     Today
                 </div>
             </a>
-            <a @click="navHandle('2')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('1')" href="javascript:;" class="flex flex-col items-center py-2 text-xs" :class=" modTabIndex == 1 ? 'text-indigo-600' : 'text-slate-500'">
                 <ClipboardList class="w-5 h-5"></ClipboardList>
                 <div class="mt-0.5">
                     Queues
                 </div>
             </a>
-            <a @click="navHandle('3')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('2')" href="javascript:;" class="flex flex-col items-center py-2 text-xs" :class=" modTabIndex == 2 ? 'text-indigo-600' : 'text-slate-500'">
                 <Gavel class="w-5 h-5"></Gavel>
                 <div class="mt-0.5">
                     Approvals
                 </div>
             </a>
-            <a @click="navHandle('4')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('3')" href="javascript:;" class="flex flex-col items-center py-2 text-xs" :class=" modTabIndex == 3 ? 'text-indigo-600' : 'text-slate-500'">
                 <Activity class="w-5 h-5"></Activity>
                 <div class="mt-0.5">
                     Reports
                 </div>
             </a>
-            <a @click="navHandle('5')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('4')" href="javascript:;" class="flex flex-col items-center py-2 text-xs" :class=" modTabIndex == 4 ? 'text-indigo-600' : 'text-slate-500'">
                 <Star class="w-5 h-5"></Star>
                 <div class="mt-0.5">
                     QA
@@ -328,6 +328,7 @@
             </a>
         </div>
 
+        <!-- 侧边栏弹窗 -->
         <div class="fixed inset-0 bg-black/40 flex" v-if="showSide">
             <div class="ml-auto h-full w-[92%] sm:w-[420px] bg-white rounded-l-3xl shadow-xl flex flex-col">
                 <div class="flex items-center gap-2 p-3 border-b">
@@ -340,46 +341,96 @@
                     </div>
                 </div>
                 <div class="px-3">
-                    <div class="grid grid-cols-5 bg-slate-100 rounded-xl p-1 text-xs">
-                        <a href="javascript:;" class="py-1 rounded-lg bg-white shadow">info</a>
-                        <a href="javascript:;" class="py-1 rounded-lg">contacts</a>
-                        <a href="javascript:;" class="py-1 rounded-lg">timeline</a>
-                        <a href="javascript:;" class="py-1 rounded-lg">ptp</a>
-                        <a href="javascript:;" class="py-1 rounded-lg">requests</a>
+                    <div class="grid grid-cols-5 bg-slate-100 rounded-xl p-1 text-xs sideTab">
+                        <a @click="sideTabHandle('0')" href="javascript:;" class="py-1 rounded-lg " :class=" sideTabIndex == 0 ? 'bg-white shadow' : ''">info</a>
+                        <a @click="sideTabHandle('1')" href="javascript:;" class="py-1 rounded-lg" :class=" sideTabIndex == 1 ? 'bg-white shadow' : ''">contacts</a>
+                        <a  @click="sideTabHandle('2')" href="javascript:;" class="py-1 rounded-lg" :class=" sideTabIndex == 2 ? 'bg-white shadow' : ''">timeline</a>
+                        <a  @click="sideTabHandle('3')" href="javascript:;" class="py-1 rounded-lg" :class=" sideTabIndex == 3 ? 'bg-white shadow' : 'text-slate-500'">ptp</a>
+                        <a @click="sideTabHandle('4')" href="javascript:;" class="py-1 rounded-lg" :class=" sideTabIndex == 4 ? 'bg-white shadow' : ''">requests</a>
                     </div>
                 </div>
                 <div class="flex-1 overflow-y-auto p-3 pb-28">
-                    <div class="space-y-3">
-                        <div class="p-3 rounded-xl border bg-white">
-                            <div class="text-sm font-semibold">
-                                Key Info
+                    <template v-if="showSideMod0">
+                        <div class="space-y-3">
+                            <div class="p-3 rounded-xl border bg-white">
+                                <div class="text-sm font-semibold">
+                                    Key Info
+                                </div>
+                                <div class="text-xs text-slate-600 mt-1">
+                                    Phone: +234 8022009018
+                                </div>
+                                <div class="text-xs text-slate-600">
+                                    Amount Due: ₦415,139
+                                </div>
+                                <div class="text-xs text-slate-600">
+                                    Strategy: Friendly
+                                </div>
+                                <div class="text-xs text-slate-600">
+                                    PTP: none
+                                </div>
                             </div>
-                            <div class="text-xs text-slate-600 mt-1">
-                                Phone: +234 8022009018
-                            </div>
-                            <div class="text-xs text-slate-600">
-                                Amount Due: ₦415,139
-                            </div>
-                            <div class="text-xs text-slate-600">
-                                Strategy: Friendly
-                            </div>
-                            <div class="text-xs text-slate-600">
-                                PTP: none
+                            <div class="p-3 rounded-xl border bg-white">
+                                <div class="text-sm font-semibold mb-2">
+                                    Quick Actions
+                                </div>
+                                <div class="flex gap-2 flex-wrap">
+                                    <a href="javascript:;" class="px-3 py-2 rounded-xl bg-indigo-600 text-white text-xs">Set PTP</a>
+                                    <a href="javascript:;" class="px-3 py-2 rounded-xl bg-emerald-600 text-white text-xs">Send Pay Link</a>
+                                    <a href="javascript:;" class="px-3 py-2 rounded-xl bg-slate-100 text-xs">Upload Receipt</a>
+                                    <a href="javascript:;" class="px-3 py-2 rounded-xl text-xs bg-amber-600 text-white">Escalate</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-3 rounded-xl border bg-white">
-                            <div class="text-sm font-semibold mb-2">
-                                Quick Actions
-                            </div>
-                            <div class="flex gap-2 flex-wrap">
-                                <a href="javascript:;" class="px-3 py-2 rounded-xl bg-indigo-600 text-white text-xs">Set PTP</a>
-                                <a href="javascript:;" class="px-3 py-2 rounded-xl bg-emerald-600 text-white text-xs">Send Pay Link</a>
-                                <a href="javascript:;" class="px-3 py-2 rounded-xl bg-slate-100 text-xs">Upload Receipt</a>
-                                <a href="javascript:;" class="px-3 py-2 rounded-xl text-xs bg-amber-600 text-white">Escalate</a>
+                    </template>
+
+                    <template v-if="showSideMod1">
+                        <div class="space-y-2">
+                            <div class="p-3 rounded-xl border bg-white flex items-center gap-3">
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-sm font-medium truncate">
+                                        Demo User 9007
+                                    </div>
+                                    <div class="text-xs text-slate-500">
+                                        +2348094699942
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="p-2 rounded-xl bg-emerald-600 text-white"><Phone class="w-4 h-4"></Phone></a>
+                                <a href="javascript:;" class="p-2 rounded-xl bg-emerald-600 text-white"><MessageCircle class="w-4 h-4"></MessageCircle></a>
                             </div>
                         </div>
-                    </div>
+                    </template>
+
+
+                    <template v-if="showSideMod2">
+                        <div class="space-y-2">
+                            <div class="p-3 rounded-xl border bg-white">
+                                <div class="text-[11px] text-slate-500">2025/9/10 15:50:46 .<span class="uppercase">note </span>· synced</div>
+                                <div class="text-sm mt-1">
+                                    Imported (demo)
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template v-if="showSideMod3">
+                        <div class="space-y-2">
+                            <div class="text-sm text-slate-500">
+                                No PTP set. Use <b>Set PTP</b> in Quick Actions.
+                            </div>
+                        </div>
+                    </template>
+
+                    <template v-if="showSideMod4">
+                        <div class="space-y-2">
+                            <div class="p-3 rounded-xl border bg-white flex items-center justify-between text-sm">
+                                <div>Waiver (late fee)</div>
+                                <a href="javascript:;"class="px-3 py-1 rounded-lg text-xs bg-indigo-600 text-white">Request</a>
+                            </div>
+                        </div>
+                    </template>
                 </div>
+               
+              
                 <div class="sticky bottom-0 left-0 right-0 bg-white border-t p-3 pt-2 pb-[calc(env(safe-area-inset-bottom)+12px)]">
                     <div class="grid grid-cols-4 gap-2 text-sm">
                         <a href="javascript:;" class="py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]">

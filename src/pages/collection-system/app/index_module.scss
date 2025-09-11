@@ -6,6 +6,11 @@
     padding-top: 30px;
     background: #f6f3f4;
 }
+.sideTab {
+    a {
+        text-align: center;
+    }
+}
 ::v-deep .searchBox .van-field {
     height: 100%;
     line-height: 1;
