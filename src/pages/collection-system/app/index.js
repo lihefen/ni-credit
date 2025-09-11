@@ -32,7 +32,8 @@ export default {
     Star,
     SquareCheckBig,
     DropdownMenu,
-    DropdownItem
+    DropdownItem,
+    Gavel
   },
   name: 'HomeApp',
   data() {
@@ -49,6 +50,7 @@ export default {
         ],
         showSide:false,
         dpdValue:0,
+        searchValue:"",
         slectValue: 0,
         slectOption: [
             { text: 'ALL', value: 0 },
@@ -57,6 +59,11 @@ export default {
             { text: 'L', value: 3 },
         ],
         showFilter: false,
+        showMod1:true,
+        showMod2:false,
+        showMod3:false,
+        showMod4:false,
+        showMod5:false
         
     };
   },
@@ -75,6 +82,39 @@ export default {
     },
     hideSideHandle() {
         this.showSide = false;
+    },
+    navHandle(index) {  
+        if(index == 1) {
+            this.showMod1 = true;
+            this.showMod2 = false;
+            this.showMod3 = false;
+            this.showMod4 = false;
+            this.showMod5 = false;
+        } else if(index == 2) {
+            this.showMod2 = true;
+            this.showMod1 = false;
+            this.showMod3 = false;
+            this.showMod4 = false;
+            this.showMod5 = false;
+        } else if(index == 3) {
+            this.showMod3 = true;
+            this.showMod1 = false;
+            this.showMod2 = false;
+            this.showMod4 = false;
+            this.showMod5 = false;
+        } else if(index == 4) {
+            this.showMod4 = true;
+            this.showMod1 = false;
+            this.showMod2 = false;
+            this.showMod3 = false;
+            this.showMod5 = false;
+        } else if(index == 5) {
+            this.showMod5 = true;
+            this.showMod1 = false;
+            this.showMod2 = false;
+            this.showMod3 = false;
+            this.showMod4 = false;
+        }
     }
   }
 };

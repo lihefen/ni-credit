@@ -61,106 +61,266 @@
                 <RefreshCw class="w-4 h-4"></RefreshCw>
             </a>
         </div>
-
-        <div class="flex-1 overflow-y-auto">
-            <div class="p-3 space-y-3">
-                <div class="grid grid-cols-3 gap-3">
-                    <div class="p-3 rounded-2xl bg-white border border-slate-200">
-                        <div class="text-xs text-slate-500">
-                            PTP due today
-                        </div>
-                        <div class="text-xl font-semibold mt-1">
-                            0
-                        </div>
-                        <div class="text-xs text-slate-400 mt-0.5">
-                            Need confirmation
-                        </div>
-                    </div>
-                    <div class="p-3 rounded-2xl bg-white border border-slate-200">
-                        <div class="text-xs text-slate-500">
-                            PTP due today
-                        </div>
-                        <div class="text-xl font-semibold mt-1">
-                            0
-                        </div>
-                        <div class="text-xs text-slate-400 mt-0.5">
-                            Need confirmation
-                        </div>
-                    </div>
-                    <div class="p-3 rounded-2xl bg-white border border-slate-200">
-                        <div class="text-xs text-slate-500">
-                            PTP due today
-                        </div>
-                        <div class="text-xl font-semibold mt-1">
-                            0
-                        </div>
-                        <div class="text-xs text-slate-400 mt-0.5">
-                            Need confirmation
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-2 text-sm font-semibold text-slate-700">
-                    My queue (top by DPD)
-                </div>
-                <div class="space-y-2" v-for="(item,index) in userList" :key="index +665">
-                    <div class="p-2 rounded-2xl bg-white border border-slate-200 text-[13px] leading-tight">
-                        <div class="flex items-start gap-2">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <div class="font-semibold truncate">
-                                        Demo User 9007
-                                    </div>
-                                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">DPD  29</span>
-                                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">Friendly</span>
-                                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Risk H</span>
-                                </div>
-                                <div class="text-xs text-slate-500 mt-0.5">
-                                    +234 8022009018 · ₦415,139 · Abuja
-                                </div>
-                                <div class="mt-1 text-xs">
-                                    PTP: 
-                                </div>
+        <template v-if="showMod1">
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-3 space-y-3">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">
+                                PTP due today
                             </div>
-                            <a href="javascript:;" class="p-2 rounded-xl bg-slate-100 min-w-[48px] min-h-[48px]" @click="sideHandle">
-                                <ChevronRight class="w-4 h-4"></ChevronRight>
-                            </a>
+                            <div class="text-xl font-semibold mt-1">
+                                0
+                            </div>
+                            <div class="text-xs text-slate-400 mt-0.5">
+                                Need confirmation
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2 mt-2">
-                            <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]"><Phone class="w-4 h-4"></Phone> </a>
-                            <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]"><MessageCircle class="w-4 h-4"></MessageCircle> </a>
-                            <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]"><FileText class="w-4 h-4"></FileText> </a>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">
+                                PTP due today
+                            </div>
+                            <div class="text-xl font-semibold mt-1">
+                                0
+                            </div>
+                            <div class="text-xs text-slate-400 mt-0.5">
+                                Need confirmation
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">
+                                PTP due today
+                            </div>
+                            <div class="text-xl font-semibold mt-1">
+                                0
+                            </div>
+                            <div class="text-xs text-slate-400 mt-0.5">
+                                Need confirmation
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-sm font-semibold text-slate-700">
+                        My queue (top by DPD)
+                    </div>
+                    <div class="space-y-2" v-for="(item,index) in userList" :key="index +665">
+                        <div class="p-2 rounded-2xl bg-white border border-slate-200 text-[13px] leading-tight">
+                            <div class="flex items-start gap-2">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <div class="font-semibold truncate">
+                                            Demo User 9007
+                                        </div>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">DPD  29</span>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">Friendly</span>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Risk H</span>
+                                    </div>
+                                    <div class="text-xs text-slate-500 mt-0.5">
+                                        +234 8022009018 · ₦415,139 · Abuja
+                                    </div>
+                                    <div class="mt-1 text-xs">
+                                        PTP: 
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="p-2 rounded-xl bg-slate-100 min-w-[48px] min-h-[48px]" @click="sideHandle">
+                                    <ChevronRight class="w-4 h-4"></ChevronRight>
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-2 mt-2">
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]"><Phone class="w-4 h-4"></Phone> </a>
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]"><MessageCircle class="w-4 h-4"></MessageCircle> </a>
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]"><FileText class="w-4 h-4"></FileText> </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </template>
+        
+        <template v-if="showMod2">
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-3 space-y-2">
+                    <div class="flex items-center gap-2 mb-1">
+                        <a href="javascript:;" class="px-2 py-1 text-xs rounded bg-slate-100">Select all</a>
+                        <a href="javascript:;" class="px-2 py-1 text-xs rounded bg-slate-100">Clear</a>
+                        <div class="ml-auto text-xs text-slate-500">
+                            Selected:  0
+                        </div>
+                    </div>
+                    <div class="overflow-y-auto  space-y-2" style="height: calc(-220px + 100svh);">
+                        <div class="p-2 rounded-2xl bg-white border border-slate-200 text-[13px] leading-tight" v-for="(item,index) in userList" :key="index +65">
+                            <div class="flex items-start gap-2">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <div class="font-semibold truncate">
+                                            Demo User 9007
+                                        </div>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">DPD 29</span>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">Friendly</span>
+                                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Risk H</span>
+                                    </div>
 
+                                    <div class="text-xs text-slate-500 mt-0.5">
+                                        +234 8022009018 · ₦415,139 · Abuja
+                                    </div>
+                                    <div class="mt-1 text-xs">
+                                        PTP: 
+                                    </div>
+                                </div>
+                                <a @click="sideHandle" href="javascript:;" class="p-2 rounded-xl bg-slate-100 min-w-[48px] min-h-[48px]"><ChevronRight class="w-4 h-4"></ChevronRight></a>
+                            </div>
+                            <div class="flex items-center gap-2 mt-2">
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center min-h-[44px]"><Phone class="w-4 h-4"></Phone> </a>
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]"><MessageCircle class="w-4 h-4"></MessageCircle> </a>
+                                <a href="javascript:;" class="flex-1 py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]"><FileText class="w-4 h-4"></FileText> </a>
+                            </div>
+                            <div class="mt-2">
+                                <div class="flex gap-2 mt-2">
+                                    <a href="javascript:;" class="p-2 rounded-xl bg-slate-100"><ClipboardList class="w-4 h-4"></ClipboardList> </a>
+                                    <a href="javascript:;" class="p-2 rounded-xl bg-indigo-600 text-white"><SquareCheckBig class="w-4 h-4"></SquareCheckBig></a>
+                                    <a href="javascript:;" class="p-2 rounded-xl bg-amber-600 text-white"><Gavel class="w-4 h-4"></Gavel> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="showMod3">
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-3 space-y-2">
+                    <div class="p-3 rounded-2xl bg-white border" v-for="(item,index) in userList" :key="index +8">
+                        <div class="text-sm font-semibold">
+                            waiver · AP-1001
+                        </div>
+                        <div class="text-xs text-slate-500">
+                            Case C-230014 · Applicant A-1001 · 2025/9/10 15:50:46
+                        </div>
+                        <div class="text-sm mt-1">
+                            Suggestion: Waive late fee 10%
+                        </div>
+                        <div class="mt-2 text-[11px] text-slate-500">
+                            Trail: 1 step(s)
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <a href="javascript:;" class="px-3 py-1 rounded-xl bg-slate-100 text-xs">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="showMod4">
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-3 space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">Total Due</div>
+                            <div class="text-xl font-semibold mt-1">₦20,238,162</div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">Cases</div>
+                            <div class="text-xl font-semibold mt-1">₦20,238,162</div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">PTP (pending)</div>
+                            <div class="text-xl font-semibold mt-1">1</div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">PTP (kept)</div>
+                            <div class="text-xl font-semibold mt-1">0</div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">DPD ≥ 15</div>
+                            <div class="text-xl font-semibold mt-1">50</div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white border border-slate-200">
+                            <div class="text-xs text-slate-500">Hit Rate (mock)</div>
+                            <div class="text-xl font-semibold mt-1">38%</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Connected / Calls</div>
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-white border">
+                        <div class="text-sm font-semibold mb-2">Distribution (DPD)</div>
+                        <div class="flex items-end gap-2 h-28">
+                            <div class="flex-1 flex flex-col items-center">
+                                <div class="w-full bg-indigo-200 rounded-t" style="height: 140px;">
+
+                                </div>
+                                <div class="text-[10px] mt-1">
+                                    0-4
+                                </div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <div class="w-full bg-indigo-200 rounded-t" style="height: 116px;">
+
+                                </div>
+                                <div class="text-[10px] mt-1">
+                                    0-4
+                                </div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <div class="w-full bg-indigo-200 rounded-t" style="height: 128px;">
+
+                                </div>
+                                <div class="text-[10px] mt-1">
+                                    0-4
+                                </div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <div class="w-full bg-indigo-200 rounded-t" style="height: 200px;">
+
+                                </div>
+                                <div class="text-[10px] mt-1">
+                                    0-4
+                                </div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center">
+                                <div class="w-full bg-indigo-200 rounded-t" style="height: 416px;">
+                                </div>
+                                <div class="text-[10px] mt-1">
+                                    0-4
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="showMod5">
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-6 text-slate-500 text-sm">
+                    QA review page (placeholder) — future: call recording, transcription, scoring.
+                </div>
+            </div>
+        </template>
         <div class="grid grid-cols-5 bg-white border-t border-slate-200">
-            <a href="javascript:;" class="flex flex-col items-center py-2 text-xs text-indigo-600">
+            <a @click="navHandle('1')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-indigo-600">
                 <Clock class="w-5 h-5"></Clock>
                 <div class="mt-0.5">
                     Today
                 </div>
             </a>
-            <a href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('2')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
                 <ClipboardList class="w-5 h-5"></ClipboardList>
                 <div class="mt-0.5">
                     Queues
                 </div>
             </a>
-            <a href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('3')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
                 <Gavel class="w-5 h-5"></Gavel>
                 <div class="mt-0.5">
                     Approvals
                 </div>
             </a>
-            <a href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('4')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
                 <Activity class="w-5 h-5"></Activity>
                 <div class="mt-0.5">
                     Reports
                 </div>
             </a>
-            <a href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
+            <a @click="navHandle('5')" href="javascript:;" class="flex flex-col items-center py-2 text-xs text-slate-500">
                 <Star class="w-5 h-5"></Star>
                 <div class="mt-0.5">
                     QA
