@@ -80,7 +80,7 @@ export default {
         stepperValue2:3,
         showEscalateDialog:false,
         escalateValue:"",
-        showUploadDialog:true,
+        showUploadDialog:false,
         fileNameValue:"IMG_20250908.jpg",
         amountValue:"50000"
         
