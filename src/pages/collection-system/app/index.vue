@@ -450,6 +450,29 @@
             </div>
         </div>
 
+        <Popup v-model="showRequestDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold"></div>
+                    <a href="javascript:;" class="p-2" @click="hide">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div>
+                    <div class="text-xs mb-1">Percent *</div>
+                    <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm flex items-center justify-between">
+                        <van-field v-model="percentValue"   />
+                    </div>
+                    <div class="text-[11px] text-slate-500 mt-1">
+                        ≤20% preferred
+                    </div>
+                </div>
+                <a href="javascript:;" class="w-full py-2 rounded-xl bg-indigo-600 text-white text-sm block text-center">
+                    Submit
+                </a>
+            </div>
+        </Popup>
+
     </div>
 </template>
 

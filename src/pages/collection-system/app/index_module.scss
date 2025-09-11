@@ -38,5 +38,8 @@
 ::v-deep .slectBox  .van-dropdown-menu__title--active {
     color: #000;
 }
+::v-deep.van-popup {
+    background: transparent;
+}
 @media (max-width: 768px) {
 }
