@@ -47,5 +47,20 @@
 ::v-deep  .stepperValue .van-stepper__input {
     flex: 1;
 }
+
+::v-deep  .outcomeSelect .van-dropdown-menu__bar {
+    // height: inherit;
+    background: none;
+    box-shadow: none;
+}
+::v-deep  .outcomeSelect  .van-dropdown-menu {
+    height: 100%;
+}
+::v-deep  .van-dropdown-menu__title::after {
+    right: 0;
+}
+::v-deep  .outcomeSelect .van-dropdown-menu__title {
+    width: 100%;
+}
 @media (max-width: 768px) {
 }

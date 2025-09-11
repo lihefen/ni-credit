@@ -442,7 +442,7 @@
                         <a href="javascript:;" class="py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]">
                             <ClipboardList class="w-4 h-4"></ClipboardList>
                         </a>
-                        <a href="javascript:;" class="py-2 rounded-xl bg-indigo-600 text-white flex items-center justify-center min-h-[44px]">
+                        <a @click="showActionRecordDialog = true" href="javascript:;" class="py-2 rounded-xl bg-indigo-600 text-white flex items-center justify-center min-h-[44px]">
                             <SquareCheckBig class="w-4 h-4"></SquareCheckBig>
                         </a>
                     </div>
@@ -584,6 +584,44 @@
         </Popup>
 
 
+        <Popup v-model="showActionRecordDialog" position="bottom" :close-on-click-overlay="false" class="reduceDialog" @click-overlay="hide">
+            <div class="w-full bg-white rounded-t-3xl p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="font-semibold">Action Record</div>
+                    <a href="javascript:;" class="p-2" @click="showActionRecordDialog = false">
+                        <X class="w-5 h-5"></X>
+                    </a>
+                </div>
+                <div>
+                    <div class="text-xs mb-1">Outcome *</div>
+                    <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm outcomeSelect">
+                        <van-dropdown-menu>
+                            <van-dropdown-item v-model="outcomeValue" :options="outcomeOption" />
+                        </van-dropdown-menu>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-xs mb-1">Notes * (≥10 chars)</div>
+                    <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                        <van-field v-model="notesValue" placeholder="Summarize dialogue, objections, next steps…" />
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-xs mb-1">Next follow-up *</div>
+                    <div class="w-full bg-slate-100 rounded-xl px-3 py-2 text-sm">
+                        <a href="javascript:;" class="relative w-full flex items-center justify-between  py-2" @click="showCalendar = true"><CalendarDays class="absolute right-0"></CalendarDays></a>
+                    </div>
+                </div>
+
+
+                <a href="javascript:;" class="w-full py-2 rounded-xl text-white text-sm bg-slate-300 flex items-center justify-center">
+                    Save
+                </a>
+            </div>
+        </Popup>
+
+        <van-calendar v-model="showCalendar" @confirm="onConfirmCalendar" />
 
     </div>
 </template>

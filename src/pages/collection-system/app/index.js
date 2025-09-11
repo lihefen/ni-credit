@@ -82,7 +82,21 @@ export default {
         escalateValue:"",
         showUploadDialog:false,
         fileNameValue:"IMG_20250908.jpg",
-        amountValue:"50000"
+        amountValue:"50000",
+        showActionRecordDialog:false,
+        notesValue:"",
+        showCalendar:false,
+        outcomeOption:[
+            { text: 'Connected', value: 0 },
+            { text: 'No Answer', value: 1 },
+            { text: 'Unreachable', value: 2 },
+            { text: 'Promise to Pay', value: 3 },
+            { text: 'Partial Payment', value: 4 },
+            { text: 'Refuse', value: 5 },
+            { text: 'Dispute', value: 6 },
+            { text: 'Complaint', value: 7 },
+        ],
+        outcomeValue:0
         
     };
   },
@@ -181,6 +195,9 @@ export default {
     },
     hideQuickDialog() {
         this.showQuickDialog = false;   
+    },
+    onConfirmCalendar() {
+
     }
   }
 };
