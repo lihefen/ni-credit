@@ -423,8 +423,8 @@
                     <template v-if="showSideMod4">
                         <div class="space-y-2">
                             <div class="p-3 rounded-xl border bg-white flex items-center justify-between text-sm">
-                                <div>Waiver (late fee)</div>
-                                <a href="javascript:;"class="px-3 py-1 rounded-lg text-xs bg-indigo-600 text-white">Request</a>
+                                <div class="font-semibold">Waiver (late fee)</div>
+                                <a href="javascript:;"class="px-3 py-1 rounded-lg text-xs bg-indigo-600 text-white" @click="showRequestDialog = true">Request</a>
                             </div>
                         </div>
                     </template>

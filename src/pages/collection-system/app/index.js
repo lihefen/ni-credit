@@ -72,7 +72,7 @@ export default {
         showSideMod3:false,
         sideTabIndex:0,
         modTabIndex:0,
-        showRequestDialog:true,
+        showRequestDialog:false,
         percentValue:10
         
     };
@@ -168,7 +168,7 @@ export default {
       
     },
     hide() {
-
+        this.showRequestDialog = false;
     }
   }
 };
