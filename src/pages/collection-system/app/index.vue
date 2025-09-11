@@ -439,7 +439,7 @@
                         <a href="javascript:;" class="py-2 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center min-h-[44px]">
                             <MessageCircle class="w-4 h-4"></MessageCircle>
                         </a>
-                        <a href="javascript:;" class="py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]">
+                        <a @click="showActionRecordDialog = true"  href="javascript:;" class="py-2 rounded-xl bg-slate-100 flex items-center justify-center min-h-[44px]">
                             <ClipboardList class="w-4 h-4"></ClipboardList>
                         </a>
                         <a @click="showActionRecordDialog = true" href="javascript:;" class="py-2 rounded-xl bg-indigo-600 text-white flex items-center justify-center min-h-[44px]">
