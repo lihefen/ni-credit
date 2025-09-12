@@ -78,6 +78,9 @@ export default {
         overrideHandle() {
             this.showOverrideDialog = true;
             this.showPop = false;
+        },
+        approveHandle() {
+            //
         }
     }
 }

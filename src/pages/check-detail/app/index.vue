@@ -292,6 +292,7 @@
         <div class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 p-3 z-30">
             <div class="max-w-xl mx-auto grid grid-cols-2 gap-3">
                 <a href="javascript:;" @click="showRejectDialog = true" class="px-4 py-3 rounded-2xl bg-red-600 text-white font-semibold flex items-center justify-center gap-2"><X class="w-5 h-5" />Reject</a>
+                
                 <a href="javascript:;" @click="approveHandle" class="px-4 py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 bg-gray-200 text-gray-500 cursor-not-allowed"><Check class="w-5 h-5" /> Approve</a>
             </div>
             <div class="max-w-xl mx-auto mt-2 text-center text-xs text-gray-500">
