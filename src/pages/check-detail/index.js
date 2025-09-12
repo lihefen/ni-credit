@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Button, Cell, NavBar, CellGroup, Toast,CountDown ,Field,Checkbox, CheckboxGroup,Popup,DropdownMenu, DropdownItem } from 'vant';
 import 'vant/lib/index.css';
 import App from './app/index.vue';
-
+import 'assets/styles/tailwind.css'
 // 注册Vant组件
 Vue.use(Button);
 Vue.use(Cell);
