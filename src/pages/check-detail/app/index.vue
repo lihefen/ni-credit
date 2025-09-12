@@ -4,7 +4,7 @@
  * @Author: hean
  * @Date: 2025-07-22 11:00:33
  * @LastEditors: hean
- * @LastEditTime: 2025-09-04 21:14:27
+ * @LastEditTime: 2025-09-12 22:05:31
 -->
 <template>
     <div class="main min-h-[100dvh] bg-gray-50">
@@ -291,8 +291,8 @@
 
         <div class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 p-3 z-30">
             <div class="max-w-xl mx-auto grid grid-cols-2 gap-3">
-                <a href="javascript:;" class="px-4 py-3 rounded-2xl bg-red-600 text-white font-semibold flex items-center justify-center gap-2"><X class="w-5 h-5" />Reject</a>
-                <a href="javascript:;" class="px-4 py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 bg-gray-200 text-gray-500 cursor-not-allowed"><Check class="w-5 h-5" /> Approve</a>
+                <a href="javascript:;" @click="showRejectDialog = true" class="px-4 py-3 rounded-2xl bg-red-600 text-white font-semibold flex items-center justify-center gap-2"><X class="w-5 h-5" />Reject</a>
+                <a href="javascript:;" @click="approveHandle" class="px-4 py-3 rounded-2xl font-semibold flex items-center justify-center gap-2 bg-gray-200 text-gray-500 cursor-not-allowed"><Check class="w-5 h-5" /> Approve</a>
             </div>
             <div class="max-w-xl mx-auto mt-2 text-center text-xs text-gray-500">
                 Only Reject / Approve in footer. Advanced actions in menu (top-right).
